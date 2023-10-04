@@ -27,6 +27,9 @@ namespace BooksLibrary.Tests
             Assert.ThrowsException<ArgumentException>(
                                () => book3.ValidateTitle());
 
+            Books book4 = new Books() { Id = 4, Title = "abc", Price = 300 };
+            book1.ValidateTitle();
+
         }
 
         [TestMethod()]
@@ -36,7 +39,7 @@ namespace BooksLibrary.Tests
             Books book1 = new Books() { Id = 1, Title = "The Hobbit", Price = 100 };
             book1.ValidatePrice();
 
-            Books book2 = new Books() { Id = 2, Title = "The Hobbit", Price = -1 };
+            Books book2 = new Books() { Id = 2, Title = "The Hobbit", Price = 0 };
             Assert.ThrowsException<ArgumentException>(
                                () => book2.ValidatePrice());
 

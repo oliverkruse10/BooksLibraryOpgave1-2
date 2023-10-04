@@ -25,7 +25,7 @@ namespace BooksLibrary
             {
                 throw new ArgumentNullException("Title cannot be null");
             }
-            if (Title.Length <= 3)
+            if (Title.Length < 3)
             {
                 throw new ArgumentException("Title must be at least 3 characters");
             }
